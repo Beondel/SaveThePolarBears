@@ -36,7 +36,6 @@ public class Icecap : MonoBehaviour {
 		if (other.gameObject.tag == "soot") {
 			other.gameObject.GetComponent<particleMovement> ().enabled = false;
 			other.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2(0f,0f);
-			//other.gameObject.transform.Translate (new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y));
 			sootCount++;
 		}
 		if (other.gameObject.tag == "sunlight") {
@@ -57,7 +56,7 @@ public class Icecap : MonoBehaviour {
 
 	public void specialContact2(){
 		snowflakeCount++;
-		GetComponent<Transform>().localScale = new Vector2((transform.localScale.x+2f*snowflakeCount*0.023f),(transform.localScale.y+1f*snowflakeCount*0.01f)); 
+		GetComponent<Transform>().localScale = new Vector2((transform.localScale.x+1f*snowflakeCount*0.023f),(transform.localScale.y+1f*snowflakeCount*0.01f)); 
 		float newpos = (transform.position.y + 0.009f * -1f * snowflakeCount);
 		transform.position = new Vector2(transform.position.x, newpos);
 	}
