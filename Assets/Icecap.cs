@@ -29,8 +29,8 @@ public class Icecap : MonoBehaviour {
 		if (other.gameObject.tag == "snowflake") {
 			Destroy (other.gameObject);
 			snowflakeCount++;
-			GetComponent<Transform>().localScale = new Vector2((transform.localScale.x+5f*snowflakeCount*0.023f),(transform.localScale.y+5f*snowflakeCount*0.01f)); 
-			float newpos = (transform.position.y + 0.009f * -5f * snowflakeCount);
+			GetComponent<Transform>().localScale = new Vector2((transform.localScale.x+1f*snowflakeCount*0.023f),(transform.localScale.y+1f*snowflakeCount*0.01f)); 
+			float newpos = (transform.position.y + 0.009f * -1f * snowflakeCount);
 			transform.position = new Vector2(transform.position.x, newpos);
 		}
 		if (other.gameObject.tag == "soot") {
@@ -42,15 +42,23 @@ public class Icecap : MonoBehaviour {
 		if (other.gameObject.tag == "sunlight") {
 			Destroy (other.gameObject);
 			sunlightCount++;
-			if (sootCount == 0) {
-				GetComponent<Transform> ().localScale = new Vector2 ((transform.localScale.x + 5f * sunlightCount * -0.023f), (transform.localScale.y + 5f * sunlightCount * -0.01f)); 
-				float newpos = (transform.position.y + 0.009f * 5f * snowflakeCount);
+				GetComponent<Transform> ().localScale = new Vector2 ((transform.localScale.x + 1f * sunlightCount * -0.023f), (transform.localScale.y + 1f * sunlightCount * -0.01f)); 
+				float newpos = (transform.position.y + 0.009f * 1f * snowflakeCount);
 				transform.position = new Vector2 (transform.position.x, newpos);
-			} else {
-				GetComponent<Transform> ().localScale = new Vector2 ((transform.localScale.x + 15f * sunlightCount * -0.023f), (transform.localScale.y + 15f * sunlightCount * -0.01f)); 
-				float newpos = (transform.position.y + 0.009f * 15f * snowflakeCount);
-				transform.position = new Vector2 (transform.position.x, newpos);
-			}
 		}
+	}
+
+	public void specialContact() {
+		sunlightCount++;
+		GetComponent<Transform> ().localScale = new Vector2 ((transform.localScale.x + 3f * sunlightCount * -0.023f), (transform.localScale.y + 3f * sunlightCount * -0.01f)); 
+		float newpos = (transform.position.y + 0.009f * 3f * snowflakeCount);
+		transform.position = new Vector2 (transform.position.x, newpos);
+	}
+
+	public void specialContact2(){
+		snowflakeCount++;
+		GetComponent<Transform>().localScale = new Vector2((transform.localScale.x+2f*snowflakeCount*0.023f),(transform.localScale.y+1f*snowflakeCount*0.01f)); 
+		float newpos = (transform.position.y + 0.009f * -1f * snowflakeCount);
+		transform.position = new Vector2(transform.position.x, newpos);
 	}
 }

@@ -48,8 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Icecap.cs" />
      <Compile Include="Assets\Player.cs" />
+     <Compile Include="Assets\Sootcollision2.cs" />
      <Compile Include="Assets\garbageCollection.cs" />
      <Compile Include="Assets\particleMovement.cs" />
+     <Compile Include="Assets\sootcollision.cs" />
      <Compile Include="Assets\spawners.cs" />
      <Compile Include="Assets\star.cs" />
  <Reference Include="UnityEngine.Analytics">

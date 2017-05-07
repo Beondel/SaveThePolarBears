@@ -7,11 +7,11 @@ public class particleMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = Random.Range (1.0f, 2.0f);
+		//speed = Random.Range (1.0f, 2.0f);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (Vector3.down * speed * Time.deltaTime);
+		transform.Translate (Vector3.down * 2.0f * Time.deltaTime);
 	}
 }
