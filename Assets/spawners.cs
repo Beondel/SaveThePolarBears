@@ -11,12 +11,13 @@ public class spawners : MonoBehaviour {
 	public float spawnMostWait;
 	public float spawnLeastWait;
 	public int startWait;
+	public bool started;
 
 	int randEnemy;
 	int randSpawner;
 
 	void Start () {
-		StartCoroutine (Spawner());
+		
 	}
 
 
@@ -34,5 +35,12 @@ public class spawners : MonoBehaviour {
 			Instantiate (enemies[randEnemy], spawnPosition, gameObject.transform.rotation);
 			yield return new WaitForSeconds (spawnWait);
 		}
+	}
+
+	public void buttonPress(){
+		GameObject.FindGameObjectWithTag ("instructions").transform.position = new Vector3 (1000f, 1000f);
+		GameObject.FindGameObjectWithTag ("button").transform.position = new Vector3 (1000f, 1000f);
+		StartCoroutine (Spawner());
+		started = true;
 	}
 }
