@@ -29,7 +29,7 @@ public class spawners : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);
 
 		while (true) {
-			randEnemy = Random.Range (0, 3);
+			randEnemy = Random.Range (0, 7);
 			randSpawner = Random.Range (0, 5);
 			Vector3 spawnPosition = spawnerArray[randSpawner].transform.position;
 			Instantiate (enemies[randEnemy], spawnPosition, gameObject.transform.rotation);
